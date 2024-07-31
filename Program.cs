@@ -20,9 +20,9 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddDbContext<EmanRestaurantDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), sqlServerOptions =>
         sqlServerOptions.EnableRetryOnFailure(
-            maxRetryCount: 5, // Number of retries
-            maxRetryDelay: TimeSpan.FromSeconds(10), // Delay between retries
-            errorNumbersToAdd: null))); // SQL errors to consider transient, null for defaults
+            maxRetryCount: 5, 
+            maxRetryDelay: TimeSpan.FromSeconds(10), 
+            errorNumbersToAdd: null))); 
 
 
 var app = builder.Build();
